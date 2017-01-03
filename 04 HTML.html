@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>	
+		.blue{
+			color: blue;
+		}
+		#div2{
+			margin: 50px;
+			padding: 50px;
+			width: 100px;
+			height: 200px;
+			border: 20px solid #ccc;
+		}
+	</style>
+	<script>
+	$(document).ready(function(){
+		//---------------------------------text():获取内容;改变文本内同
+		$('#btn1').click(function(){
+			alert($('#p1').text());
+			$('#p1').text('已改变');
+
+		});
+		//----------------------------------html():获取元素
+		$('#btn2').click(function(){
+			alert($('#div1').html());
+		});
+		//----------------------------------attr():获取元素属性
+		$('#btn3').click(function(){
+			alert($('a').attr('href'));
+		});
+		//----------------------------------val():获取文本内同;改变文本内容
+		$('#btn4').click(function(){
+			alert($('#text1').val());
+			$('#text1').val('Sup_Sup_');
+		});
+		//----------------------------------append():元素末尾追加文本
+		$('#btn5').click(function(){
+			$('#p1').append('追加文本');
+		});
+		//----------------------------------prepend():元素前端追加文本
+		$('#btn6').click(function(){
+			$('#p1').prepend('前置文本');
+		});
+		//--------------------------------------------创建元素
+		$('#btn7').click(function(){
+			$('ul').append('<li>4</li>');
+			$('ul').prepend('<li>1</li>');
+			$('ul').before('<p>我并不是li</p>');
+			$('ul').after('<p>我也不是li</p>');
+		});
+		//---------------------------------------------删除元素，可以传递参数指定某些元素
+		//---------------------------------------------------remove()删除元素，含子元素
+		//---------------------------------------------------empty()清空子元素
+		$('#btn8').click(function(){
+			$('h1').remove();
+			$('ul').empty();
+		});
+		//--------------------------------------addClass()增加css样式
+		$('#btn9').click(function(){
+			$('h1').addClass('blue');
+		});
+		//--------------------------------------removeClass()删除css样式
+		$('#btn10').click(function(){
+			$('h1').removeClass('blue');
+		});
+		//----------------------------------------获取css样式
+		$('#btn11').click(function(){
+			alert($('h1').css('color'));
+		});
+		//-----------------------------------------改变css样式
+		$('#btn12').click(function(){
+			$('h1').css('color','green');//---------------单个
+			$('h1').css({//-------------------------------多个
+				'background':'yellow',
+				'font-style':'italic',
+				});
+		});
+		//-----------------------------------------尺寸
+		$('#btn13').click(function(){
+			$('#div2').append('<p>width:'+$('#div2').width()+'</p>');
+			$('#div2').append('<p>innerWidth:'+$('#div2').innerWidth()+'</p>');
+			$('#div2').append('<p>outerWidth:'+$('#div2').outerWidth()+'</p>');
+			$('#div2').append('<p>outerWidth(true):'+$('#div2').outerWidth(true)+'</p>');
+			$('#div2').append('<p>height:'+$('#div2').height()+'</p>');
+		});
+	});
+	</script>
+</head>
+<body>
+	<button id='btn1'>获取文字；改变文本内同</button>
+	<p id='p1'>获取文字<p>
+	<button id='btn2'>获取HTML</button>
+	<div id='div1'>
+		<p>dfs</p>
+		<p>dfhhjo</p>
+	</div>
+	<button id='btn3'>元素属性</button>
+	<a href="javaScript:">空</a>
+	<button id='btn4'>文本内容;改变文本内容</button>
+	<input id='text1' type="text" value="Sup_"></input>
+	<button id='btn5'>末尾追加文本</button>
+	<button id='btn6'>头部追加文本</button>
+	<ul>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<button id='btn7'>追加元素</button>
+	<button id='btn8'>删除元素</button>
+	<h1>删除</h1>
+	<button id='btn9'>增加css样式</button>
+	<button id='btn10'>删除css样式</button>
+	<button id='btn11'>返回css的属性</button>
+	<button id='btn12'>改变css的属性</button>
+	<div id='div2'></div>
+	<button id='btn13'>显示div尺寸</button>
+</body>
+<html>

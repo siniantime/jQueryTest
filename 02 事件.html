@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<!---———————————————————————————————————————————————————————————————————————引用百度jquery-->
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>	
+		.class{
+			font-size: 2em;
+		}
+	</style>
+	<script>
+		//-----------------------------------------------------文档加载完成后使用jquery
+		$(document).ready(function(){
+			//-------------------------------------------------选取页面中所有p元素并隐藏
+			/*
+			$('p').click(function(){
+				$(this).hide();
+			});
+			*/
+			//--------------------------------------------------选取样式为class的元素，单击隐藏
+			$('#p0').click(function(){
+				$(this).hide();
+			});
+			//-------------------------------------------------选取id=p1的元素，双击单击隐藏
+			$('#p1').dblclick(function(){
+				$(this).hide();
+			});
+			//---------------------------------------------------鼠标移入
+			$('#p2').mouseenter(function(){
+				$('#p2').hide();
+			});
+			//---------------------------------------------------鼠标移出
+			$('#p2').mouseleave(function(){
+				$('#p2').show();
+			});
+			//---------------------------------------------------鼠标按下
+			$('#p3').mousedown(function(){
+				alert('按下了鼠标');
+			});
+			$('#p4').mouseup(function(){
+				alert('鼠标抬起');
+			});
+			$('#p5').focus(function(){
+				alert('聚焦');
+			});
+			$('#p5').blur(function(){
+				$(this).css('background-color','#ccc');
+			});
+		});
+	</script>
+</head>
+<body>
+	<p id=p0>单击消失</p>
+	<p id=p1>双击消失</p>
+	<p id=p2>鼠标移入消失/移除显示<p>
+	<p id=p3>鼠标按下弹窗</p>
+	<p id=p4>鼠标抬起弹窗</p>
+	<input id=p5 type="text"></input>
+</body>
+<html>

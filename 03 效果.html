@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+		#p2{
+			display: none;
+		}
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: #ccc;
+			position: relative;
+		}	
+	</style>
+	<script>
+		$(document).ready(function(){
+			//-----------------------------------------tongle():显示隐藏
+			$('#btn1').click(function(){
+				$('#p1').toggle();
+			});
+			//-----------------------------------------fadeIn()：淡入，可选时间作为参数
+			$('#btn2').click(function(){
+				$('#p2').fadeIn(2000);
+			});
+			//-----------------------------------------fadeOut():淡出
+			$('#btn3').click(function(){
+				$('#p3').fadeOut(2000);
+			});
+			//-----------------------------------------fadeToggle():淡入淡出交替出现
+			$('#btn4').click(function(){
+				$('#p4').fadeToggle(1000);
+			});
+			//-----------------------------------------fadeTo():调整透明度，第一个参数设置时间，第二个参数设置透明度
+			$('#btn5').click(function(){
+				$('#p5').fadeTo(1000,0.5);
+			});
+			//-----------------------------------------slideUp():向上移动
+			$('#btn6').click(function(){
+				$('#div1').slideUp(2000);
+			});
+			//------------------------------------------slideDown():向下移动
+			$('#btn7').click(function(){
+				$('#div1').slideDown(1000);
+			});
+			//------------------------------------------slideToggle():交替出现
+			$('#btn8').click(function(){
+				$('#div1').slideToggle();
+			});
+			//-------------------------------------------animiate():动画
+			$('#btn9').click(function(){
+				$('#div1').animate({
+					left:'+=200px',
+					top:'300px',
+				},1000);
+				$('#div1').animate({
+					top:'-300px',
+				},3000,function(){
+					alert('结束');
+				});
+			});
+			//-------------------------------------------stop()：停止动画
+			$('#btn10').click(function(){
+				$('#div1').stop();
+			});
+			//-------------------------------------------链
+			$('#btn11').click(function(){
+				$('#div2').css('background','#ccc')
+				.css('width','200px')
+				.css('height','200px')
+				.fadeToggle(2000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id='btn1'>显示/隐藏</button>
+	<p id='p1'>单击消失，再次点击时候出现<p>
+	<button id='btn2'>淡入</button>
+	<p id='p2'>淡入</p>
+	<button id='btn3'>淡出</button>
+	<p id='p3'>淡出</p>
+	<button id='btn4'>淡入淡出交替出现</button>
+	<p id='p4'>交替出现淡入淡出</p>
+	<button id='btn5'>调整透明度</button>
+	<p id='p5'>调整透明度</p>
+	<button id='btn6'>向下滑动</button>
+	<button id='btn7'>向上滑动</button>
+	<button id='btn8'>交替滑动</button>
+	<button id='btn9'>动画</button>
+	<button id='btn10'>停止</button>
+	<div id='div1'>Sup_</div>
+	<button id='btn11'>链</button>
+	<div id='div2'></div>
+</body>
+<html>
