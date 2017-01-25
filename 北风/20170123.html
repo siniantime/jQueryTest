@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>	
+	</style>
+	<script>
+		$(document).ready(function(){
+			//-----------------------------------测试文件是否能够正常使用
+			/*
+			$('button').click(function(){
+				alert("成功");
+			});
+			*/
+			//$("button").css("color","red");
+			//alert($===jQuery);
+			//$("button").css("color","red").css("width","200px");
+			//$("#btn").css("color","#ccc");
+			//$(".btn").css("color","red");
+			//$("#div > button").css("color","red");
+			//$("#div ul li button").css("color","red");
+			//$("#div ul").nextUntil("p").css("color","red");
+			//$("a[title$=1]").css("color","red");
+			//$("li:last").css("background-color","#ccc");
+			//$("li:not(.red)").css("background-color","#ccc");
+			//$("li:even").css("background-color","#ccc");
+			$("li:eq(3)").css("background-color","#ccc");
+		});
+	</script>
+</head>
+<body>
+	<div id="div">
+		<button id="btn">点击</button>
+		<button class="btn">点击</button>
+		<button class="btn">点击</button>
+		<button>点击</button>
+		<div>
+			<button>点击</button>
+			<button>点击</button>
+		</div>
+		<button>点击</button>
+		<ul>
+			<li>
+				<button>点击</button>
+			</li>
+			<li></li>
+			<li class="red"></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<h1>h1</h1>
+		<button>点击</button>
+		<p>p</p>
+		<button>点击</button>
+		<a title="num1" href="">1</a>
+		<a title="num1" href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<a title="num5" href="">5</a>
+	</div>
+</body>
+<html>
