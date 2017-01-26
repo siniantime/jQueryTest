@@ -6,97 +6,78 @@
 	<title>Sup_</title>
 	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<style>
-		.bg{
-			background-color: #ccc;
-		}
-		.red{
-			color: red;
-		}
-		.blue{
-			color: blue;
-		}	
-	</style>
+		
+	</style> 
 	<script>
 		$(document).ready(function(){
-			//-------------------------获取css样式
-			//alert($("p").css('color'));
-
-			//-------------------------设置css样式
-			//$('p').css('color','red');
-
-			//-------------------------获取元素的多个样式
+			//---------------------------------后面插入节点
 			/*
-			var p=$('p').css(['height','width','color']);
-			for(var i in p){
-				alert(i+":"+p[i]);
-			}
+			var box=$('<div>节点</div>');
+			$('body').append(box);
 			*/
+			
+			//---------------------------------外部同级添加元素，后面
+			//$('div').after('<strong>DOM</strong>');
 			/*
-			var p=$('p').css(['height','width','color']);
-			$.each(p,function(attr,value){
-				alert(attr+':'+value);
+			$('div').after(function(index,html){
+				return'<strong>DOM</strong>';
 			});
 			*/
 
-			//-------------------------设置多种css样式
+			//---------------------------------外部同级添加元素，后面
+			//$('div').before('<p>p</p>');
+
+			//---------------------------------移动节点
+			//$('p').insertAfter('div');
+			//$('p').insertBefore('div');
+
+			//----------------------------------包裹元素，外侧添加元素 
+			//$('p').wrap('<div></div>');
+
+			//-----------------------------------移除元素
+			//$('#div1').unwrap();
+
+			//-----------------------------------整体包裹
+			//$('li').wrapAll('<ul></ul>');
+
+			//-----------------------------------对子内容包裹
+			//$('#div2').wrapInner('<div></div>');
+
+			//-----------------------------------克隆节点
 			/*
-			$('p').css({
-				'color':'blue',
-				'background':'#ccc',
+			$('h1').click(function(){
+				alert('克隆节点');
 			});
+			$('body').append($('h1').clone(true));
 			*/
 
-			//--------------------------css类增加或消除
-			/*
-			$('p').addClass('bg');
-			$('p').remove('');
-			*/
+			//------------------------------------删除节点
+			//$('h2').remove();
+			//$('h2').detach();//--------------------保留事件行为
+			//$('h2').empty();//---------------------清空节点
 
-			//---------------------------样式切换,默认的样式和设定的样式
-			/*
-			$('p').click(function(){
-				$(this).toggleClass('bg');
-			});
-			*/
-
-			//---------------------------设定的两种样式切换
-			/*
-			$('p').click(function(){
-				$(this).toggleClass('red');
-				if($(this).hasClass('red')){
-					$(this).removeClass('blue');
-				}
-				else{
-					$(this).addClass('blue');
-				}
-			});
-			*/
-			/*
-			$('p').click(function(){
-				$(this).toggleClass(function(){
-					if ($(this).hasClass('red')) {
-						$(this).removeClass('red');
-						return 'blue';
-					}
-					else{
-						$(this).removeClass('blue');
-						return 'red';
-					}
-				});
-			});
-			*/
-
-			//--------------------------------------设置宽度
-			//$('p').width(500);
-			$('p').width(function(index,value){
-				return value-500+'px';
-			});
+			//------------------------------------替换节点
+			//$('h3').replaceWith('<h4>被替换了</h4>');
+			$('<h4>被替换了2</h4>').replaceAll('h3');			
 		});
 	</script>
 </head>
 <body>
-	<div id="div">
-		<p>输入</p>
+	<p>空</p>
+	<div>节点</div>
+	<div>
+		<div id='div1'>
+			移除
+		</div>
 	</div>
+	<li></li>
+	<li></li>
+	<div id="div2">
+		<p>1</p>
+		<p>1</p>
+	</div>
+	<h1>克隆节点</h1>
+	<h2>删除节点</h2>
+	<h3>替换节点</h3>
 </body>
 <html>
