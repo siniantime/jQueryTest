@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+		.bg{
+			background-color: #ccc;
+		}
+		.red{
+			color: red;
+		}
+		.blue{
+			color: blue;
+		}	
+	</style>
+	<script>
+		$(document).ready(function(){
+			//-------------------------获取css样式
+			//alert($("p").css('color'));
+
+			//-------------------------设置css样式
+			//$('p').css('color','red');
+
+			//-------------------------获取元素的多个样式
+			/*
+			var p=$('p').css(['height','width','color']);
+			for(var i in p){
+				alert(i+":"+p[i]);
+			}
+			*/
+			/*
+			var p=$('p').css(['height','width','color']);
+			$.each(p,function(attr,value){
+				alert(attr+':'+value);
+			});
+			*/
+
+			//-------------------------设置多种css样式
+			/*
+			$('p').css({
+				'color':'blue',
+				'background':'#ccc',
+			});
+			*/
+
+			//--------------------------css类增加或消除
+			/*
+			$('p').addClass('bg');
+			$('p').remove('');
+			*/
+
+			//---------------------------样式切换,默认的样式和设定的样式
+			/*
+			$('p').click(function(){
+				$(this).toggleClass('bg');
+			});
+			*/
+
+			//---------------------------设定的两种样式切换
+			/*
+			$('p').click(function(){
+				$(this).toggleClass('red');
+				if($(this).hasClass('red')){
+					$(this).removeClass('blue');
+				}
+				else{
+					$(this).addClass('blue');
+				}
+			});
+			*/
+			/*
+			$('p').click(function(){
+				$(this).toggleClass(function(){
+					if ($(this).hasClass('red')) {
+						$(this).removeClass('red');
+						return 'blue';
+					}
+					else{
+						$(this).removeClass('blue');
+						return 'red';
+					}
+				});
+			});
+			*/
+
+			//--------------------------------------设置宽度
+			//$('p').width(500);
+			$('p').width(function(index,value){
+				return value-500+'px';
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="div">
+		<p>输入</p>
+	</div>
+</body>
+<html>
