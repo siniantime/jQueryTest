@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+		.div{
+			width: 200px;
+			height: 200px;
+			background-color: #ccc;
+		}
+	</style> 
+	<script>
+		$(document).ready(function(){
+			/*
+			$('button').click(function(){
+				alert('弹窗');
+			});
+			//----------------------------模拟用户操作
+			$('button').trigger('click');
+			*/
+			//----------------------------简写
+			/*
+			$('button').click(function(){
+				alert('简写');
+			}).trigger('click');
+			*/
+			//----------------------------传入数据
+			/*
+			$('button').click(function(e,data1,data2){
+				alert(data1);
+			}).trigger('click',['1234','asdf']);
+			*/
+			//----------------------------triggerHandler阻止默认行为
+			
+			//----------------------------命名空间
+			/*
+			$('button').bind('click.abc',function(){
+				alert('abc');
+			});
+			$('button').bind('click.xyz',function(){
+				alert('xyz');
+			});
+			$('button').unbind('click.abc');
+			*/
+
+			//----------------------------事件委托 
+			//--------------------------------事件不委托
+			/*
+			$('.btn').click(function(){
+				alert('事件不委托');
+			});
+			*/
+			//---------------------------------事件委托，添加到父元素的事件，通过冒泡完成
+			/*
+			$('.div').on('click','button',function(){
+				$(this).clone().appendTo('.div');
+			});
+			*/
+
+			//----------------------------on off one
+			//----------------------------on
+			/*
+			$('.btn').on('click',function(){
+				alert('替换');
+			});
+			*/
+			//-----------------------------one仅一次事件触发
+			/*
+			$('.btn').one('click',function(){
+				alert('仅仅执行一次');
+			});
+			*/
+		});
+	</script>
+</head>
+<body>
+	<button>按钮</button>
+	<div class="div">
+		<button class="btn">按钮</button>
+		<button class="btn">按钮</button>
+		<button class="btn">按钮</button>
+	</div>
+</body>
+<html>
