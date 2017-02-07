@@ -1,0 +1,17 @@
+body,ul,li{margin: 0px;padding: 0px}
+
+.container{position: relative;width: 100%;padding-top: 20px;}
+
+.ad{position: relative;}
+
+.img{position: relative; z-index:1; width: 368px;height: 368px;margin: auto;border: 1px solid #ccc;}
+
+.img li{position: absolute;display: block;}
+
+.spot{position: absolute; z-index: 3; bottom: 20px; width:100%;  text-align: center; border: none;}
+
+.spot li{position: relative; display: inline-block; margin: 0 15px; width: 10px; height: 10px; border: 1px solid #ccc; border-radius: 5px; list-style: none;}
+
+.spot .native{background-color: red}
+
+p{text-align: center;}
