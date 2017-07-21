@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		p{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style> 
+	<script>
+		$(document).ready(function(){
+			//------------------------------绑定事件，可以绑定多个事件
+			/*
+			$('button').bind('click mouseover',function(){
+				alert('弹窗');
+			});
+			*/
+			/*
+			$('button').bind({
+				mouseover:function(){
+					alert('鼠标移入');
+				},
+				mouseout:function(){
+					alert('鼠标移出');
+				}
+			});
+			*/
+			//-------------------------------删除事件
+			/*
+			$('button').bind('click mouseover',function(){
+				alert('出现');
+			});
+			$('button').unbind('click');
+			*/
+
+			//--------------------------------封装的事件
+			/*
+			$('button').click(function(){
+				alert('弹窗');
+			});
+			*/
+
+			//---------------------------------mouseover与mouseenter的区别
+			//-----------------------------------mouseover触发子节点
+			//-----------------------------------mouseenter不触发子节点
+			/*
+			$('div').mouseover(function(){
+				$('strong').html(function(index,value){
+					return value+'1';
+				});
+			});
+			*/
+			/*
+			$('div').mouseenter(function(){
+				$('strong').html(function(index,value){
+					return value+'1';
+				});
+			});
+			*/
+
+			//-----------------------------------键盘事件
+			/*
+			$('textarea').keydown(function(){
+				alert('键盘');
+			});
+			*/
+			/*
+			$('textarea').keydown(function(){
+				alert('键盘');
+			});
+			*/
+
+			//------------------------------------光标事件
+			/*
+			$('textarea').focus(function(){
+				alert('光标激活');
+			});
+			*/
+			/*
+			$('textarea').blur(function(){
+				alert('光标丢失');
+			});
+			*/
+			$('div').hover(function(){
+				$(this).css('background-color','red');
+			},function(){
+				$(this).css('background-color','green');
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>按钮</button>
+	<div>
+		<p></p>
+	</div>
+	<strong></strong>
+	<textarea></textarea>
+</body>
+<html>

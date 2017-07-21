@@ -1,7 +1,0 @@
-body,ul,li{margin: 0px;padding: 0px}
-
-.container{width: 100%;padding-top: 20px;}
-
-ul{position: relative;width: 368px;height: 368px;margin: auto;border: 1px solid #ccc;}
-
-li{position: absolute;display: block;}
