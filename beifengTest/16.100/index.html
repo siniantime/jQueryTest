@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.validate.js"></script>
+	<style>	
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('#reg').validate({
+				rules:{
+					user:{
+						required:true,
+						minlength:2,
+					},
+					email:{
+						required:true,
+						email:true,
+					},
+					url:{
+						url:true,//验证是否以http://开头
+					},
+					date:{
+						date:true,
+					},
+					dateISO:{
+						dateISO:true,//只验证日期格式
+					},
+					notpass:{
+						equalTo:'#pass',//用于密码确认
+					}
+				},
+				messages:{
+					user:{
+						required:'帐号不得为空',
+						minlength:'长度不得少于两位',
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<form id="reg" action="123.html">
+		<p>帐号：<input type="text" name="user"></input></p>
+		<p>邮箱：<input type="text" name="email"></input></p>
+		<p>网址：<input type="url" name="url"></input></p>
+		<p>日期：<input type="text" name="date"></input></p>
+		<p>日期：<input type="text" name="dateISO"></input></p>
+		<p>数字：<input type="text" name="date"></input></p>
+		<p>密码：<input type="text" name="pass" id="pass"></input></p>
+		<p>密码确认：<input type="text" name="notpass"></input></p>
+
+		<p>提交：<input type="submit" value="提交"></input></p>
+	</form>
+</body>
+<html>
