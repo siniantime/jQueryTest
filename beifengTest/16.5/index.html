@@ -28,13 +28,32 @@
 		</div>
 	</div>
 	
-	<div id="reg" title="终于等到你">
+	<div id="reg" title="注册">
 		<p>
-			<label>账号:</label>
-			<input type="text" name="user" id="user" class="text" title="请输入" placeholder="请填写帐号"></input>
+			<label for="user">帐号：</label>
+			<input type="text" name="user" id="user" class="text" placeholder="请填写账号"></input>
+			<span class="star">*</span>
+		</p>
+		<p>
+			<label for="password">密码：</label>
+			<input type="password" name="password" id="password" class="text" placeholder="请输入密码"></input>
+			<span class="star">*</span>
+		</p>
+		<p>
+			<label for="email">邮箱：</label>
+			<input type="text" name="text" id="email" class="text" placeholder="邮箱"></input>
+			<span class="star">*</span>
+		</p>
+		<p>
+			<label>性别：</label>
+			<input type="radio" name="sex" id="male" checked="checked"><label for='male'>男</label></input>
+			<input type="radio" name="sex" id="female"><label for="female">女</label></input>
+		</p>
+		<p>
+			<label for="date">出生日期：</label>
+			<input type="text" name="date" readonly="readonly"></input>
 		</p>
 	</div>
-	
 	
 	
 </body>
