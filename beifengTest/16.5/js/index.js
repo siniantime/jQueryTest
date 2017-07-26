@@ -20,4 +20,7 @@ $(function () {
 	})
 	
 	$('#reg').buttonset();
+
+	$('#date').datepicker();
+	$('#reg input[title]').tooltip();
 })

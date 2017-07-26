@@ -64,3 +64,16 @@ body{
 	font-size: 14px;
 	color: red;
 }
+#reg p{
+	margin: 10px 0;
+}
+#reg input{
+	text-indent: 5px;
+}
+#reg .ui-state-active{
+	background: #14a5f0;
+	border:1px solid #14a5f0;
+}
+#reg .date{
+	width: 170px;
+}
