@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>Sup_</title>
+	<link rel="short icon" type="images/x-icon" href="images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+	<script type="text/javascript" src="js/jquery.form.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div class="head">
+		<div class="wrap">
+			<h1 class="fl">iSee</h1>
+			<div class="head-search fl">
+				<input type="text" name="search" class="search"/>
+			</div>
+			<div class="head-btn fl">
+				<input type="button" value="查询" id="search-btn"/>
+			</div>
+			<div class="head-menmber fr">
+				<a href="#" id="reg-a">注册</a>丨<a href="#" id="login-a">登录</a>
+			</div>
+		</div>
+	</div>
+	
+	<form id="reg" title="注册" action="add.php">
+		<p>
+			<label for="user">帐号：</label>
+			<input type="text" name="user" id="user" class="text" placeholder="请填写账号" title="请输入帐号,不少于两位"></input>
+			<span class="star">*</span>
+		</p>
+		<p>
+			<label for="password">密码：</label>
+			<input type="password" name="password" id="password" class="text" placeholder="请输入密码" title="请输入密码"></input>
+			<span class="star">*</span>
+		</p>
+		<p>
+			<label for="email">邮箱：</label>
+			<input type="text" name="email" id="email" class="text" placeholder="邮箱" title="请输入邮箱"></input>
+			<span class="star">*</span>
+		</p>
+		<p>
+			<label>性别：</label>
+			<input type="radio" name="sex" id="male" checked="checked"><label for='male'>男</label></input>
+			<input type="radio" name="sex" id="female"><label for="female">女</label></input>
+		</p>
+		<p>
+			<label for="date">出生日期：</label>
+			<input type="text" name="birthday" readonly="readonly" class="text date" id="date"></input>
+			<span class="star">*</span>
+		</p>
+	</form>
+	
+	
+</body>
+<html>
