@@ -4,6 +4,29 @@ $(function () {
 
 	});
 	
+
+	//cookie测试
+	//$.cookie('user','bbs',{
+	//	expires:7,
+	//});
+
+	$('#member,#logout').hide();
+	if($.cookie('user')){
+		$('#member,#logout').show();
+		$('#reg-a,#login-a').hide();
+		$('#member').html($.cookie('user'));
+	}else{
+		$('#member,#logout').hide();
+		$('#reg-a,#login-a').show();
+	}
+
+	$('#logout').click(function(event) {
+		/* Act on the event */
+		$.removeCookie('user');
+		window.location.href = '/jQueryTest/beifengTest/16.19/'
+	});
+
+
 	$('#reg-a').click(function(event) {
 		/* Act on the event */
 		$('#reg').dialog('open');
@@ -40,10 +63,17 @@ $(function () {
 						if (responseText) {
 							$('#reg').dialog('widget').find('button').eq(1).button('enable');
 							$('#loading').html('数据新增成功');
+							//设置cookie数据
+							$.cookie('user',$('#user').val(),{
+								expires:7,
+							});
 							setTimeout(function(){
 								$('#loading').dialog('close');
 								$('#reg').dialog('close');
 								$('#reg').resetForm();
+								$('#member,#logout').show();
+								$('#reg-a,#login-a').hide();
+								$('#member').html($.cookie('user'));
 							},1000);
 						}
 						
