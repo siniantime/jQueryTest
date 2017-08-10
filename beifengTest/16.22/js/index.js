@@ -157,4 +157,14 @@ $(function () {
 		}
 		*/
 	});
+
+	//切换选项卡
+	$('#tabs').tabs({
+		load:function(){
+			alert('a');
+		},
+		beforeLoad:function(){
+			alert('b');
+		}
+	});
 })
