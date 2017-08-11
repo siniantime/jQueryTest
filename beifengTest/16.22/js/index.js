@@ -1,9 +1,36 @@
 $(function () {
 	//添加提交按钮样式
 	$('#search-btn').button({
-
+		icons:{
+			primary:'ui-icon-search',
+		}
 	});
 	
+	$('#question-btn').button({
+
+	}).click(function(event) {
+		/* Act on the event */
+		if ($.cookie('user')) {
+
+		}else{
+			$('#error').dialog('open');
+			setTimeout(function (argument) {
+				// body...
+				$('#error').dialog('close');
+				$('#login').dialog('open');
+			},1000);
+		}
+	});;
+
+	$('#error').dialog({
+		autoOpen:false,
+		modal:true,
+		closeOnEscape:false,
+		resizable:false,
+		draggable:false,
+		width:180,
+		height:80,
+	})
 
 	//cookie测试
 	//$.cookie('user','bbs',{
@@ -159,12 +186,16 @@ $(function () {
 	});
 
 	//切换选项卡
+
 	$('#tabs').tabs({
 		load:function(){
-			alert('a');
+			
 		},
 		beforeLoad:function(){
-			alert('b');
+		
 		}
 	});
+
+	//折叠菜单
+	$('#accordion').accordion();
 })
