@@ -2,12 +2,14 @@ $(function () {
 	//添加提交按钮样式
 	$('#search-btn').button({
 		icons:{
-			primary:'ui-icon-search',
-		}
+			primary:'ui-icon-search'
+		},
 	});
 	
 	$('#question-btn').button({
-
+		icons:{
+			primary:'ui-icon-lightbulb',
+		},
 	}).click(function(event) {
 		/* Act on the event */
 		if ($.cookie('user')) {
